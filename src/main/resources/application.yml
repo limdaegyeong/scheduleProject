@@ -1,0 +1,34 @@
+---
+spring:
+  
+  thymeleaf:
+     cache: false
+     prefix: classpath:/templates/
+     suffix: .html
+     #view-names: thymeleaf/*  
+  
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy : org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+  mvc:
+    view:
+      prefix: /WEB-INF/views/biz/
+      suffix: .jsp
+
+  devtools:
+   livereload: 
+     enabled: false
+---
+
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://dev.danbplus.com:53306/danbplusSTS_LDG?UTC&allowPublickeyRetrieval=true
+    username: danbplus
+    password: Danb1235!!
+    driver-class-name: com.mysql.cj.jdbc.Driver
