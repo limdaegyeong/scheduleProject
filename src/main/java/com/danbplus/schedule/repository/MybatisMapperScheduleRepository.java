@@ -2,7 +2,7 @@ package com.danbplus.schedule.repository;
 
 import org.springframework.stereotype.Repository;
 
-import com.danbplus.schedule.domain.ScheduleBoard;
+import com.danbplus.schedule.domain.SCB_INFO;
 import com.danbplus.schedule.repository.mapper.ScheduleMapper;
 
 @Repository
@@ -18,9 +18,9 @@ public class MybatisMapperScheduleRepository implements ScheduleRepository{
 	 * 스케쥴 정보 저장
 	 */
 	@Override
-	public ScheduleBoard scheduleBoardSave(ScheduleBoard scheduleBoard) {
-		scheduleMapper.scheduleBoardSave(scheduleBoard);
-		return scheduleBoard;
+	public SCB_INFO scheduleBoardSave(SCB_INFO scb_info) {
+		scheduleMapper.scheduleBoardSave(scb_info);
+		return scb_info;
 	}
 	
 }

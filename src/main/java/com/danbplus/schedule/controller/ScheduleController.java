@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.danbplus.schedule.domain.ScheduleBoard;
+import com.danbplus.schedule.domain.SCB_INFO;
 import com.danbplus.schedule.service.ScheduleService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -40,11 +40,11 @@ public class ScheduleController {
 	
 	@ResponseBody
 	@RequestMapping("/schedule/scheduleSave.act")
-	public String scheduleSave(ScheduleBoard scheduleBoard, Model model) {
+	public String scheduleSave(SCB_INFO scb_info, Model model) {
 		String result = "스케쥴이 등록되었습니다."; 
 
 		try {
-			scheduleService.scheduleBoardSave(scheduleBoard); // 스케쥴 저장
+			scheduleService.scheduleBoardSave(scb_info); // 스케쥴 저장
 		}catch(Exception e){
 			e.printStackTrace();
 		}

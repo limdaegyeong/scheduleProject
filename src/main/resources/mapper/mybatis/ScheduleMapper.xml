@@ -3,8 +3,8 @@
 <mapper namespace="com/danbplus/schedule/repository/mapper/ScheduleMapper">
 
 	<!-- 스케쥴 등록 -->
-	<insert id="scheduleBoardSave"  parameterType="scheduleBoard">
-		insert into scheduleBoard(
+	<insert id="scheduleBoardSave"  parameterType="SCB_INFO">
+		insert into SCB_INFO(
 			title, content, startDt, endDt, registDt
 		)
 		values (

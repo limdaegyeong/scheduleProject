@@ -6,8 +6,8 @@ import jakarta.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name="scheduleBoard")
-public class ScheduleBoard {
+@Table(name="SCB_INFO")
+public class SCB_INFO {
 	
 	@Id
 	private String 	title;		// 제목
