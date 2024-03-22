@@ -1,15 +1,13 @@
 package com.danbplus.schedule.controller;
 
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -31,12 +29,18 @@ public class ScheduleController {
 	
 	
 	
-	@RequestMapping(value="/schedule/scheduleForm")
-	public String userScheduleForm() {
-		
-		return "scheduleForm";
-	}
+    @RequestMapping(value="/")
+    public ModelAndView userScheduleForm() {
+        ModelAndView modelAndView = new ModelAndView("scheduleForm");
+        List<SCB_INFO> scb_infoList = scheduleService.findScbInfoList(); // 게시글 전체 조회
+        modelAndView.addObject("scb_infoList", scb_infoList); // 모델에 조회된 값을 추가
+        return modelAndView;
+    }
 	
+    @GetMapping("/schedule/scheduleAddForm")
+    public String showScheduleAddForm() {
+        return "scheduleAddForm"; // 스케줄 등록 폼을 표시하는 뷰의 이름을 반환합니다.
+    }	
 	
 	@ResponseBody
 	@RequestMapping("/schedule/scheduleSave.act")
@@ -52,6 +56,20 @@ public class ScheduleController {
 		
 		return result; 
 	}	
-	
-
+    
+    @GetMapping("/scheduleDetailForm")
+    public ModelAndView showScheduleDetailForm(@RequestParam("num") String num) {
+        // scheduleDetailForm.jsp와 같은 뷰 템플릿의 이름을 반환합니다.
+    	
+    	if (num != null && !num.isEmpty()) {
+    		
+    	} else {
+    		
+    	}
+        ModelAndView modelAndView = new ModelAndView("scheduleDetailForm");
+        List<SCB_INFO> scb_infoList = scheduleService.findScbInfoList(); // 게시글 전체 조회
+        modelAndView.addObject("scb_infoList", scb_infoList); // 모델에 조회된 값을 추가
+        
+        return modelAndView;
+    }
 }

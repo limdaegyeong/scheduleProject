@@ -1,4 +1,9 @@
 ---
+
+mybatis:
+  type-aliases-package: com.danbplus.schedule.domain
+  mapper-locations: classpath:mapper/mybatis/*.xml
+  
 spring:
   
   thymeleaf:
@@ -31,5 +36,4 @@ spring:
      
 ---
 
-mybatis:
-  mapper-locations: mapper/mybatis/*.xml
+

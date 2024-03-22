@@ -1,5 +1,7 @@
 package com.danbplus.schedule.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.danbplus.schedule.domain.SCB_INFO;
@@ -14,6 +16,10 @@ public class ScheduleService {
 	
 	public ScheduleService(ScheduleRepository scheduleRepository) {
 		this.scheduleRepository = scheduleRepository;
+	}
+
+	public List<SCB_INFO> findScbInfoList(){
+		return scheduleRepository.findScbAll();
 	}
 	
 	@Transactional

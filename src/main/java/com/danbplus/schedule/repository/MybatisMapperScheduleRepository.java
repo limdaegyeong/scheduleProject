@@ -1,5 +1,8 @@
 package com.danbplus.schedule.repository;
 
+import java.util.HashMap;
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import com.danbplus.schedule.domain.SCB_INFO;
@@ -12,6 +15,17 @@ public class MybatisMapperScheduleRepository implements ScheduleRepository{
 	
 	public MybatisMapperScheduleRepository(ScheduleMapper scheduleMapper) {
 		this.scheduleMapper = scheduleMapper;
+	}
+	
+	
+	/**
+	 * 게시글 전체 조회
+	 */
+	@Override
+	public List<SCB_INFO> findScbAll(){
+		HashMap<String, String> findVacAllMap = new HashMap();
+		List<SCB_INFO> list = scheduleMapper.findScbAll();
+		return list;		
 	}
 	
 	/**

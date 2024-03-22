@@ -5,8 +5,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.util.Date;
 
+import org.apache.ibatis.type.Alias;
+
 @Entity
 @Table(name="SCB_INFO")
+@Alias("SCB_INFO")
 public class SCB_INFO {
 	
 	@Id

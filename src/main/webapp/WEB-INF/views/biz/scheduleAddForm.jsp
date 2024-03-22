@@ -13,20 +13,32 @@
 </head>
 <body>
 	<div>
-	    자유 게시판
-	    <c:forEach var="item" items="${scb_infoList}">
-	        <div id="${item.num}" class="clickable">
-	            <span data-value="${item.num}">게시글 번호 : ${item.num}</span> 
-	            <span data-value="${item.title}">제목 : ${item.title}</span>
-	        </div>
-	    </c:forEach>
-	    <button type="button" id="addBtn">게시글 작성</button>
+		스케줄관리 프로그램
+		<div>
+			<label for="title">프로젝트명</label>
+			<input id="title" type="text"/>
+		</div>
+		<div>
+			<label for="content">프로젝트내용</label>
+			<input id="content" type="text"/>
+		</div>
+		<div>
+			<label for="startDt">프로젝트 시작일</label>
+			<!-- <input id="startDt" type="date" /> -->
+			<input id="startDt" type="text"/>
+		</div>
+		<div>
+			<label for="endDt">프로젝트 종료일</label>
+		    <!-- <input id="endDt" type="date"/> -->
+		    <input id="endDt" type="text"/>
+		</div>
+		<button type="button" id="testBtn">스케쥴테스트</button>
 	</div>
 
 
 </body>
 <script type="text/javascript">
-/* 	$("#addBtn").on("click", function(){
+	$("#testBtn").on("click", function(){
 		 
 		title		= $("#title").val();
 		content		= $("#content").val();
@@ -49,15 +61,6 @@
 		console.log("registDt : "+now);
 		ajaxAction(json, "text", "/schedule/scheduleSave.act", function(result) {
 		});
-	}); */
-   	$("#addBtn").on("click", function() {
-        window.location.href = "/schedule/scheduleAddForm";
-    });
-	
-	$('.clickable').on("click", function() {
-	    var value = $(this).attr('id');
-	    var url = "/scheduleDetailForm?num=" + value;
-	    window.location.href = url;
 	});
 </script>
 
