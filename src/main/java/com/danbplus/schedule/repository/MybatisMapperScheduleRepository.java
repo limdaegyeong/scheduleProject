@@ -23,8 +23,16 @@ public class MybatisMapperScheduleRepository implements ScheduleRepository{
 	 */
 	@Override
 	public List<SCB_INFO> findScbAll(){
-		HashMap<String, String> findVacAllMap = new HashMap();
 		List<SCB_INFO> list = scheduleMapper.findScbAll();
+		return list;		
+	}
+	
+	/**
+	 * 게시글 상세 조회
+	 */
+	@Override
+	public List<SCB_INFO> findScbDetail(int num){
+		List<SCB_INFO> list = scheduleMapper.findScbDetail(num);
 		return list;		
 	}
 	
@@ -34,6 +42,24 @@ public class MybatisMapperScheduleRepository implements ScheduleRepository{
 	@Override
 	public SCB_INFO scheduleBoardSave(SCB_INFO scb_info) {
 		scheduleMapper.scheduleBoardSave(scb_info);
+		return scb_info;
+	}
+	
+	/**
+	 * 스케쥴 정보 수정
+	 */
+	@Override
+	public SCB_INFO scbInfoUpdate(SCB_INFO scb_info) {
+		scheduleMapper.scheduleBoardUpdate(scb_info);
+		return scb_info;
+	}
+	
+	/**
+	 * 스케쥴 정보 삭제
+	 */
+	@Override
+	public SCB_INFO scbInfoDelete(SCB_INFO scb_info) {
+		scheduleMapper.scheduleBoardDelete(scb_info);
 		return scb_info;
 	}
 	

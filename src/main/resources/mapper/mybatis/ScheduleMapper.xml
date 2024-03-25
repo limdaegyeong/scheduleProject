@@ -8,6 +8,14 @@
 		from SCB_INFO
 		ORDER BY num DESC;
 	</select>
+	
+	<!-- 게시글 상세 조회 -->
+	<select id="findScbDetail" resultType="SCB_INFO" parameterType="hashMap">
+		select *
+		from SCB_INFO
+		where num = #{num}
+		ORDER BY num DESC;
+	</select>
 
 	<!-- 스케쥴 등록 -->
 	<insert id="scheduleBoardSave"  parameterType="SCB_INFO">
@@ -18,5 +26,24 @@
 			#{title}, #{content}, #{startDt}, #{endDt}, #{registDt}
 		)
 	</insert>
+	
+	<!-- 스케쥴 수정 -->
+	<update id="scheduleBoardUpdate" parameterType="SCB_INFO">
+	    update SCB_INFO
+	    set
+	        title = #{title},
+	        content = #{content},
+	        startDt = #{startDt},
+	        endDt = #{endDt},
+	        registDt = #{registDt}
+	    where num = #{num}
+	</update>
+	
+	<!-- 스케쥴 삭제 -->
+	<delete id="scheduleBoardDelete" parameterType="SCB_INFO">
+	    delete from SCB_INFO
+	    where num = #{num}
+	</delete>
+
 
 </mapper>

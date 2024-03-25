@@ -33,6 +33,7 @@
 		    <input id="endDt" type="text"/>
 		</div>
 		<button type="button" id="testBtn">스케쥴테스트</button>
+		<button type="button" id="home">홈</button>
 	</div>
 
 
@@ -54,14 +55,24 @@
 		json.endDt		= endDt;
 		json.registDt	= now;
 		
+		if(title == "" ) { alert("제목을 입력해주세요"); return; }
+		if(content == "" ) { alert("내용을 입력해주세요"); return; }
+		if(startDt == "" ) { alert("시작일을 입력해주세요"); return; }
+		if(endDt == "" ) { alert("종료일을 입력해주세요"); return; }
+		
 		console.log("title : "+title);
 		console.log("content : "+content);
 		console.log("startDt : "+startDt);
 		console.log("endDt : "+endDt);
 		console.log("registDt : "+now);
 		ajaxAction(json, "text", "/schedule/scheduleSave.act", function(result) {
+			alert(result);
+			document.location.href = document.location.href;
 		});
 	});
+   	$("#home").on("click", function() {
+   		document.location.href = "/";
+    });
 </script>
 
 </html>

@@ -33,7 +33,17 @@ spring:
     username: danbplus
     password: Danb1235!!
     driver-class-name: com.mysql.cj.jdbc.Driver     
+
+  #profiles: local
+
+logging:
+  level:
+    root: INFO
+    com.artiplace.api: DEBUG
+
      
 ---
-
-
+spring:
+  config:
+    activate:
+      on-profile: local
