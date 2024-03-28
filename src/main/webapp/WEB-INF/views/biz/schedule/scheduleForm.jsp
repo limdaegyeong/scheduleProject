@@ -7,24 +7,46 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="/resource/js/cmm/com.js"></script>
-	
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">	
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>스케쥴 관리 게시판</title>
+    <style>
+        .container {
+            margin-top: 20px;
+        }
+
+        .clickable {
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .clickable:hover {
+            background-color: #f0f0f0;
+        }
+
+        .btn {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-	<div>
-	    자유 게시판
-	    <c:forEach var="item" items="${scb_infoList}">
-	        <div id="${item.num}" class="clickable">
-	            <span data-value="${item.num}">게시글 번호 : ${item.num}</span> 
-	            <span data-value="${item.title}">제목 : ${item.title}</span>
-	        </div>
-	    </c:forEach>
-	    <button type="button" id="addBtn">게시글 작성</button>
-	</div>
-
-
+    <div class="container">
+        <div>
+            자유 게시판
+            <c:forEach var="item" items="${scb_infoList}">
+                <div id="${item.num}" class="clickable">
+                    <span data-value="${item.num}">게시글 번호 : ${item.num}</span> 
+                    <span data-value="${item.title}">제목 : ${item.title}</span>
+                </div>
+            </c:forEach>
+            <button type="button" id="addBtn" class="btn btn-primary">게시글 작성</button>
+        </div>
+    </div>
 </body>
+
 <script type="text/javascript">
 /* 	$("#addBtn").on("click", function(){
 		 
