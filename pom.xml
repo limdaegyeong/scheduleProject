@@ -64,7 +64,6 @@
 			<version>3.0.0</version>
 		</dependency>
 
-
 		<!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
 		<dependency>
 			<groupId>jakarta.servlet</groupId>
@@ -91,7 +90,7 @@
 		<dependency>
 		    <groupId>org.slf4j</groupId>
 		    <artifactId>slf4j-api</artifactId>
-		    </dependency>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.slf4j/jcl-over-slf4j -->
 		<dependency>
 		    <groupId>org.slf4j</groupId>
@@ -129,12 +128,18 @@
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
+	    <plugins>
+	        <plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-compiler-plugin</artifactId>
+	            <version>3.11.0</version>
+	            <configuration>
+	                <release>17</release>
+	            </configuration>
+	        </plugin>
+	        <!-- 다른 플러그인들 -->
+	    </plugins>
 	</build>
+
 
 </project>
