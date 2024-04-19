@@ -36,11 +36,6 @@ spring:
 
   #profiles: local
 
-logging:
-  level:
-    root: INFO
-    com.artiplace.api: DEBUG
-
      
 ---
 spring:
