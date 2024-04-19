@@ -17,6 +17,7 @@
 		<java.version>17</java.version>
 		<maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.release>17</maven.compiler.release>
 	</properties>
 	<packaging>war</packaging>
 	<dependencies>
@@ -135,7 +136,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>3.8.6</version><!--$NO-MVN-MAN-VER$-->
 				<configuration>
                     <compilerVersion>17</compilerVersion>
                 </configuration>
