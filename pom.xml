@@ -135,6 +135,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>3.8.6</version><!--$NO-MVN-MAN-VER$-->
 				<configuration>
                     <compilerVersion>17</compilerVersion>
                 </configuration>
