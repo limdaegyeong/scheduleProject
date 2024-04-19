@@ -15,17 +15,10 @@ public class SCB_INFO {
 	@Id
 	private String 	title;		// 제목
 	private String 	content;	// 내용
-	private String 	startDt;	// 스케쥴 시작일
-	private String 	endDt;		// 스케쥴 종료일
+	private Date 	startDt;	// 스케쥴 시작일
+	private Date 	endDt;		// 스케쥴 종료일
 	private String 	registDt;	// 스케쥴 등록일
 	private int 	num;		// 스케쥴 번호
-	
-	public int getNum() {
-		return num;
-	}
-	public void setNum(int num) {
-		this.num = num;
-	}
 	public String getTitle() {
 		return title;
 	}
@@ -38,16 +31,16 @@ public class SCB_INFO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getStartDt() {
+	public Date getStartDt() {
 		return startDt;
 	}
-	public void setStartDt(String startDt) {
+	public void setStartDt(Date startDt) {
 		this.startDt = startDt;
 	}
-	public String getEndDt() {
+	public Date getEndDt() {
 		return endDt;
 	}
-	public void setEndDt(String endDt) {
+	public void setEndDt(Date endDt) {
 		this.endDt = endDt;
 	}
 	public String getRegistDt() {
@@ -56,11 +49,19 @@ public class SCB_INFO {
 	public void setRegistDt(String registDt) {
 		this.registDt = registDt;
 	}
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
 	@Override
 	public String toString() {
-		return "ScheduleBoard [title=" + title + ", content=" + content + ", startDt=" + startDt + ", endDt=" + endDt
+		return "SCB_INFO [title=" + title + ", content=" + content + ", startDt=" + startDt + ", endDt=" + endDt
 				+ ", registDt=" + registDt + ", num=" + num + "]";
 	}
+	
+
 	
 
 	
