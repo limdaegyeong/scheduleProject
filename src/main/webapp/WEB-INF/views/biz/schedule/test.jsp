@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-배포 테스트중입니다
+배포 테스트중입니다 !
 </body>
 </html>
